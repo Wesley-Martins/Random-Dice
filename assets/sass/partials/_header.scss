@@ -1,0 +1,44 @@
+@import "../abstract/variables";
+
+header {
+    align-items: center;
+    background-color: $color-primary-light;
+    display: flex;
+    justify-content: space-between;
+    opacity: 90%;
+    padding: 0.5rem 1rem;
+    .logo {
+        position: relative;
+
+        &__img {
+            height: 70px;
+            width: 70px;
+        }
+
+        &__txt {
+            font-size: 1.05rem;
+            position: absolute;
+            right: -115px;
+            top: 60%;
+        }
+    }
+
+    .theme {
+        display: inline-block;
+        position: relative;
+        height: 50px;
+        width: 50px;
+
+        &__input {
+            display: none;
+        }
+        &__label {
+            background: $moon-icon;
+            background-size: cover;
+            cursor: pointer;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+        }
+    }
+}

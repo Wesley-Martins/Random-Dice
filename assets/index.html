@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Dice</title>
+    <link rel="shortcut icon" href="./img/dice-types/d20-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./sass/reset.css">
+    <link rel="stylesheet" href="./sass/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img class="logo__img" src="./img/dice-types/d20-logo.png" alt="logo do Random Dice">
+            <span class="logo__txt">Random Dice</span>
+        </div>
+        <div class="theme">
+            <input class="theme__input" type="button" id="theme-input">
+            <label class="theme__label" for="theme-input" ></label>
+        </div>
+    </header>
+    <main>
+        <section class="dice-section">
+            <div class="dices__container">
+            </div>
+            <form class="options-form" action="" >
+                <input class="options-form__roll-btn" type="submit" value="Rolar dados">
+                <label class="option-titles" id="number-input-label" for="number-of-dices">Número de dados:</label>
+                <div class="number-container">
+                    <input class="options-form__number" type="number" name="number-of-dices" min="1" max="10" value="1">
+                    <div id="error-box"></div>
+                </div>
+
+                <h3 class="option-titles options-form__type-title">Tipo de dado</h3>
+                <div class="dice-type">
+                    <ol class="dice-type__list">
+                        <li class="dice-type__item">
+                            <input class="dice-type__btn" data-type-btn="d4" type="button" value="4 lados">
+                        </li>
+                        <li class="dice-type__item">
+                            <input class="dice-type__btn" data-type-btn="d6" type="button" value="6 lados">
+                        </li>
+                        <li class="dice-type__item">
+                            <input class="dice-type__btn" data-type-btn="d8" type="button" value="8 lados">
+                        </li>
+                        <li class="dice-type__item">
+                            <input class="dice-type__btn" data-type-btn="d10" type="button" value="10 lados">
+                        </li>
+                        <li class="dice-type__item">
+                            <input class="dice-type__btn" data-type-btn="d12" type="button" value="12 lados">
+                        </li>
+                        <li class="dice-type__item">                            
+                            <input class="dice-type__btn" data-type-btn="d20" type="button" value="20 lados">
+                        </li>
+                    </ol>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+@import "../abstract/variables";
+
+body {
+    background-color: $color-secondary-light;
+    transition: 0.75s;
+}
+
+.dark-theme {
+    background-color: $color-secondary-dark;
+    header {
+        background-color: $color-primary-dark;
+
+        .logo__txt {
+            color: $color-terciary-dark;
+        }
+
+        .theme__label {
+            background: $sun-icon;
+            background-size: cover;
+        }
+    }
+    
+    .dice-section {
+        background: $color-primary-dark;
+        .dices__container {
+            background: $color-terciary-dark;
+        }
+
+        .option-titles {
+            background: $color-terciary-dark;
+            color: black;
+        }
+
+        .dice-type__btn {
+            background: $color-terciary-dark;
+        }
+    }
+
+}
