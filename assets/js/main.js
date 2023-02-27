@@ -1,6 +1,6 @@
-const themeBtn = document.querySelector(".theme__label");
-const rollBtn = document.getElementById("roll-btn");
+const themeSwipper = document.querySelector(".theme-swipper");
 const optionsForm = document.querySelector(".options-form");
+const rollBtn = document.getElementById("roll-btn");
 const diceAmountInput = document.querySelector(".options-form__number");
 const diceTypeBtns = document.querySelectorAll("[data-type-btn]");
 const dicesContainer = document.querySelector(".dices__container");
@@ -13,7 +13,7 @@ function randomInteger(min, max) {
 
 function shakeDice(dice) {
     dice.classList.remove("shake");
-    void dice.offsetWidth;
+    void dice.offsetWidth;//Força o browser a recalcular o layout antes da animação
     dice.classList.add("shake");
 }
 
@@ -28,7 +28,7 @@ function createDice(number) {
             document.querySelector(".dices").remove();
         }
 
-        diceList.splice(1, amountToDelete);
+        diceList.splice(0, amountToDelete);
     }
     
     else {
@@ -43,10 +43,11 @@ function createDice(number) {
         }
     }
 }
+// Cria o dado inicial 
 createDice(1);
 
 function changeDiceType() {
-    const dices = document.querySelectorAll(".dices");
+    const dices = existingDices();
 
     dices.forEach(dice => {
         dice.style.backgroundImage = `url(./img/dice-types/d${lastClickedBtn}.png)`;
@@ -56,11 +57,11 @@ function changeDiceType() {
 
 let lastClickedBtn;
 diceTypeBtns.forEach(button => {
+
     button.addEventListener("click", (event) => {
         lastClickedBtn = event.target.getAttribute('data-type-btn');
 
-        changeDiceType()
-        
+        changeDiceType()  
     })
 })
 
@@ -92,6 +93,18 @@ diceAmountInput.addEventListener("input", function() {
     }
 })
 
-themeBtn.addEventListener("click", function() {
-    document.querySelector("body").classList.toggle("dark-theme")
+themeSwipper.addEventListener("click", () => {
+    const themeIcon = themeSwipper.firstElementChild;
+    document.querySelector("body").classList.toggle("dark-theme");
+
+    if(themeIcon.classList.contains("slide-right")){
+        themeIcon.classList.remove("slide-right");
+        void themeIcon.offsetWidth;
+        themeIcon.classList.add("slide-left");
+    }
+    else {
+        themeIcon.classList.remove("slide-left");
+        void themeIcon.offsetWidth;
+        themeIcon.classList.add("slide-right");
+    }
 })

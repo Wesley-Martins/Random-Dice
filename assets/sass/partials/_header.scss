@@ -23,22 +23,23 @@ header {
         }
     }
 
-    .theme {
+    .theme-swipper {
+        background-color: $color-terciary-dark;
+        border-radius: 10px;
+        cursor: pointer;
         display: inline-block;
+        height: 20px;
         position: relative;
-        height: 50px;
         width: 50px;
-
-        &__input {
-            display: none;
-        }
-        &__label {
-            background: $moon-icon;
-            background-size: cover;
-            cursor: pointer;
-            height: 100%;
+        &__icon {
+            background: url(../img/theme-icons/moon-icon.png) no-repeat center / cover;
+            border-radius: 50%;
+            height: 30px;
+            left: -2px;
             position: absolute;
-            width: 100%;
+            transform: translateY(-50%);
+            top: 50%;
+            width: 30px;
         }
     }
 }

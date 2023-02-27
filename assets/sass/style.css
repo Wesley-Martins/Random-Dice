@@ -4,34 +4,7 @@
 
 body {
   background-color: #E7F6F2;
-  transition: 0.75s;
-}
-
-.dark-theme {
-  background-color: #525252;
-}
-.dark-theme header {
-  background-color: #414141;
-}
-.dark-theme header .logo__txt {
-  color: #EEEEEE;
-}
-.dark-theme header .theme__label {
-  background: url(../img/theme-icons/sun-icon.png);
-  background-size: cover;
-}
-.dark-theme .dice-section {
-  background: #414141;
-}
-.dark-theme .dice-section .dices__container {
-  background: #EEEEEE;
-}
-.dark-theme .dice-section .option-titles {
-  background: #EEEEEE;
-  color: black;
-}
-.dark-theme .dice-section .dice-type__btn {
-  background: #EEEEEE;
+  transition: 0.3s;
 }
 
 header {
@@ -55,22 +28,24 @@ header .logo__txt {
   right: -115px;
   top: 60%;
 }
-header .theme {
+header .theme-swipper {
+  background-color: #EEEEEE;
+  border-radius: 10px;
+  cursor: pointer;
   display: inline-block;
+  height: 20px;
   position: relative;
-  height: 50px;
   width: 50px;
 }
-header .theme__input {
-  display: none;
-}
-header .theme__label {
-  background: url(../img/theme-icons/moon-icon.png);
-  background-size: cover;
-  cursor: pointer;
-  height: 100%;
+header .theme-swipper__icon {
+  background: url(../img/theme-icons/moon-icon.png) no-repeat center/cover;
+  border-radius: 50%;
+  height: 30px;
+  left: -2px;
   position: absolute;
-  width: 100%;
+  transform: translateY(-50%);
+  top: 50%;
+  width: 30px;
 }
 
 main {
@@ -201,13 +176,13 @@ main {
     transform: rotate(0);
   }
   25% {
-    transform: rotate(10deg);
+    transform: rotate(8deg);
   }
   50% {
-    transform: rotate(-10deg);
+    transform: rotate(-8deg);
   }
   75% {
-    transform: rotate(10deg);
+    transform: rotate(8deg);
   }
   100% {
     transform: rotate(0);
@@ -215,6 +190,52 @@ main {
 }
 .shake {
   animation-name: shake;
-  animation-duration: 0.5s;
+  animation-duration: 0.3s;
   animation-timing-function: ease-in-out;
+}
+
+@keyframes slide {
+  0% {
+    transform: 0;
+  }
+  100% {
+    transform: translate(100%, -50%);
+  }
+}
+.slide-left {
+  animation: slide 0.3s ease-in-out 0s 1 forwards;
+  animation-direction: reverse;
+  background-image: url(../img/theme-icons/moon-icon.png) !important;
+}
+
+.slide-right {
+  animation: slide 0.3s ease-in-out 0s 1 forwards;
+  background-image: url(../img/theme-icons/sun-icon.png) !important;
+}
+
+.dark-theme {
+  background-color: #525252;
+}
+.dark-theme header {
+  background-color: #414141;
+}
+.dark-theme header .logo__txt {
+  color: #EEEEEE;
+}
+.dark-theme header .theme__label {
+  background: url(../img/theme-icons/sun-icon.png);
+  background-size: cover;
+}
+.dark-theme .dice-section {
+  background: #414141;
+}
+.dark-theme .dice-section .dices__container {
+  background: #EEEEEE;
+}
+.dark-theme .dice-section .option-titles {
+  background: #EEEEEE;
+  color: black;
+}
+.dark-theme .dice-section .dice-type__btn {
+  background: #EEEEEE;
 }/*# sourceMappingURL=style.css.map */
