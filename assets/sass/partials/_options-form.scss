@@ -1,0 +1,124 @@
+@import "../abstract/variables";
+
+.options-form {
+    display: grid;
+    column-gap: 1rem;
+    row-gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto 1fr;
+
+    #roll-btn {
+        background-color: $color-soft-white;
+        border: none;
+        box-shadow: 2px 2px $color-soft-black;
+        color: black;
+        cursor: pointer;
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        justify-self: center;
+        letter-spacing: 1px;
+        padding: 0.3rem 1rem;
+        transition: all 0.1s;
+        &:active {
+            transform: translate(2px, 2px);
+            box-shadow: none;
+        }
+    }
+
+    .titles {
+        color: $color-soft-white;
+        background-color: $color-soft-black;
+        font-size: 1.15rem;
+        margin-bottom: 0.5rem;
+        padding: 0.4rem 0;
+        text-align: center;
+    }
+
+    .number-container {
+        grid-row: 2/4;
+        text-align: center;
+    }
+    .input-wrapper {
+        display: inline-block;
+        position: relative;
+
+        .options-form__number {
+            border: none;
+            height: 30px;
+            position: relative;
+            text-align: center;
+            width: 100px;
+            &:hover,
+            &:focus {
+                outline: none;
+            }
+        }
+        &::after,
+        &::before {
+            background: black;
+            content: "";
+            height: 15px;
+            position: absolute;
+            right: 0;
+            width: 20px;
+        }
+        &::after {top: 0}
+        &::before {bottom: 0}
+    }
+
+    #error-box {
+        align-items: center;
+        color: $color-soft-white;
+        background: $color-soft-black;
+        border-radius: 5px;
+        display: none;
+        font-size: 0.9rem;
+        height: 50px;
+        margin: 1rem auto;
+        padding: 0 10px;
+        position: relative;
+        transition: 1s;
+        text-align: center;
+        width: 80%;
+        &::before {
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-bottom: 20px solid $color-soft-black;
+            content: "";
+            left: 50%;
+            position: absolute;
+            top: -20px;
+            transform: translateX(-50%)
+        }
+    }
+
+    .dice-type {
+        grid-column: 2/3;
+        grid-row: 2/4;
+    
+        &__list {
+            background-color: $color-soft-black;
+            display: grid;
+            gap: 0.5rem;
+            list-style: none;
+            padding: 0.5rem;
+        }
+        &__btn {
+            background-color: $color-soft-white;
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1.05rem;
+            letter-spacing: 1px;
+            width: 100%;
+        }
+        &__btn:focus {
+            border: 2px solid $color-soft-black;
+            text-decoration: underline;
+        }
+        &__img {
+            display: inline;
+            height: 35px;
+            width: 35px
+        }
+    }
+}

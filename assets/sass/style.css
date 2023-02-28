@@ -1,174 +1,5 @@
 * {
-  font-family: "Alexandria", sans-serif;
-}
-
-body {
-  background-color: #E7F6F2;
-  transition: 0.3s;
-}
-
-header {
-  align-items: center;
-  background-color: #A5C9CA;
-  display: flex;
-  justify-content: space-between;
-  opacity: 90%;
-  padding: 0.5rem 1rem;
-}
-header .logo {
-  position: relative;
-}
-header .logo__img {
-  height: 70px;
-  width: 70px;
-}
-header .logo__txt {
-  font-size: 1.05rem;
-  position: absolute;
-  right: -115px;
-  top: 60%;
-}
-header .theme-swipper {
-  background-color: #EEEEEE;
-  border-radius: 10px;
-  cursor: pointer;
-  display: inline-block;
-  height: 20px;
-  position: relative;
-  width: 50px;
-}
-header .theme-swipper__icon {
-  background: url(../img/theme-icons/moon-icon.png) no-repeat center/cover;
-  border-radius: 50%;
-  height: 30px;
-  left: -2px;
-  position: absolute;
-  transform: translateY(-50%);
-  top: 50%;
-  width: 30px;
-}
-
-main {
-  display: flex;
-  justify-content: center;
-  margin: 1rem 0;
-  min-height: 90vh;
-}
-
-.dice-section {
-  background-color: #A5C9CA;
-  display: grid;
-  flex-grow: 1;
-  grid-template-rows: 0.5fr 1fr;
-  min-height: 590px;
-  max-width: 600px;
-  padding: 0.25rem;
-}
-.dice-section .dices__container {
-  align-items: center;
-  background-color: white;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  height: 225px;
-  justify-content: center;
-  margin-bottom: 1rem;
-  padding: 0.5rem;
-}
-.dice-section .dices__container .dices {
-  align-items: center;
-  background: url(../img/dice-types/d20.png) no-repeat center/contain;
-  display: flex;
-  font-size: 2rem;
-  font-weight: bold;
-  height: 100px;
-  justify-content: center;
-  width: 100px;
-}
-
-.options-form {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto 1fr;
-}
-.options-form #roll-btn {
-  cursor: pointer;
-  grid-column: 1/-1;
-  grid-row: 1/2;
-  justify-self: center;
-  letter-spacing: 1px;
-  padding: 0.25rem;
-}
-.options-form .option-titles {
-  font-size: 1.1rem;
-  grid-row: 2/3;
-  padding: 0.5rem 0;
-  text-align: center;
-}
-.options-form .number-container {
-  grid-row: 3/4;
-  text-align: center;
-}
-.options-form__number {
-  height: 30px;
-  margin: 0.5rem auto;
-  text-align: center;
-  width: 80%;
-}
-.options-form #error-box {
-  align-items: center;
-  color: #EEEEEE;
-  background: rgb(23, 24, 24);
-  border-radius: 5px;
-  display: none;
-  font-size: 0.9rem;
-  height: 50px;
-  margin: 1rem auto;
-  padding: 0 10px;
-  position: relative;
-  transition: 1s;
-  text-align: center;
-  width: 80%;
-}
-.options-form #error-box::before {
-  border-right: 10px solid transparent;
-  border-left: 10px solid transparent;
-  border-bottom: 20px solid rgb(23, 24, 24);
-  content: "";
-  left: 50%;
-  position: absolute;
-  top: -20px;
-  transform: translateX(-50%);
-}
-.options-form__type-title {
-  grid-column: 2/3;
-}
-.options-form .dice-type {
-  background-color: rgb(23, 24, 24);
-  grid-column: 2/3;
-  grid-row: 3/4;
-}
-.options-form .dice-type__list {
-  display: grid;
-  gap: 0.5rem;
-  list-style: none;
-  padding: 0.5rem;
-}
-.options-form .dice-type__btn {
-  border: 1px solid black;
-  cursor: pointer;
-  height: 30px;
-  letter-spacing: 1px;
-  width: 100%;
-}
-.options-form .dice-type__btn:focus {
-  border: 2px solid red;
-}
-.options-form .dice-type__img {
-  display: inline;
-  height: 35px;
-  width: 35px;
+  font-family: "Titillium Web", sans-serif;
 }
 
 @keyframes shake {
@@ -222,20 +53,210 @@ main {
 .dark-theme header .logo__txt {
   color: #EEEEEE;
 }
-.dark-theme header .theme__label {
-  background: url(../img/theme-icons/sun-icon.png);
-  background-size: cover;
-}
 .dark-theme .dice-section {
   background: #414141;
 }
-.dark-theme .dice-section .dices__container {
-  background: #EEEEEE;
+
+body {
+  background-color: #E7F6F2;
+  transition: 0.3s;
 }
-.dark-theme .dice-section .option-titles {
-  background: #EEEEEE;
+
+header {
+  align-items: center;
+  background-color: #A5C9CA;
+  display: flex;
+  justify-content: space-between;
+  opacity: 90%;
+  padding: 0.5rem 1rem;
+}
+header .logo {
+  position: relative;
+}
+header .logo__img {
+  height: 70px;
+  width: 70px;
+}
+header .logo__txt {
+  font-size: 1.1rem;
+  position: absolute;
+  right: -100px;
+  top: 60%;
+}
+header .theme-swipper {
+  background-color: #EEEEEE;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block;
+  height: 20px;
+  position: relative;
+  width: 50px;
+}
+header .theme-swipper__icon {
+  background: url(../img/theme-icons/moon-icon.png) no-repeat center/cover;
+  border-radius: 50%;
+  height: 30px;
+  left: -2px;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  width: 30px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  min-height: 90vh;
+}
+
+.dice-section {
+  background-color: #A5C9CA;
+  display: grid;
+  flex-grow: 1;
+  grid-template-rows: 0.5fr 1fr;
+  min-height: 600px;
+  max-width: 600px;
+  padding: 0.25rem;
+}
+.dice-section .dices__container {
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid rgb(23, 24, 24);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  height: 225px;
+  justify-content: center;
+  margin-bottom: 0.75rem;
+  padding: 0.5rem;
+}
+.dice-section .dices__container .dices {
+  align-items: center;
+  background: url(../img/dice-types/d20.png) no-repeat center/contain;
+  display: flex;
+  font-size: 2rem;
+  font-weight: bold;
+  height: 100px;
+  justify-content: center;
+  width: 100px;
+}
+
+.options-form {
+  display: grid;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  row-gap: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto 1fr;
+}
+.options-form #roll-btn {
+  background-color: #EEEEEE;
+  border: none;
+  box-shadow: 2px 2px rgb(23, 24, 24);
   color: black;
+  cursor: pointer;
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  justify-self: center;
+  letter-spacing: 1px;
+  padding: 0.3rem 1rem;
+  transition: all 0.1s;
 }
-.dark-theme .dice-section .dice-type__btn {
-  background: #EEEEEE;
+.options-form #roll-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+.options-form .titles {
+  color: #EEEEEE;
+  background-color: rgb(23, 24, 24);
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  padding: 0.4rem 0;
+  text-align: center;
+}
+.options-form .number-container {
+  grid-row: 2/4;
+  text-align: center;
+}
+.options-form .input-wrapper {
+  display: inline-block;
+  position: relative;
+}
+.options-form .input-wrapper .options-form__number {
+  border: none;
+  height: 30px;
+  position: relative;
+  text-align: center;
+  width: 100px;
+}
+.options-form .input-wrapper .options-form__number:hover, .options-form .input-wrapper .options-form__number:focus {
+  outline: none;
+}
+.options-form .input-wrapper::after, .options-form .input-wrapper::before {
+  background: black;
+  content: "";
+  height: 15px;
+  position: absolute;
+  right: 0;
+  width: 20px;
+}
+.options-form .input-wrapper::after {
+  top: 0;
+}
+.options-form .input-wrapper::before {
+  bottom: 0;
+}
+.options-form #error-box {
+  align-items: center;
+  color: #EEEEEE;
+  background: rgb(23, 24, 24);
+  border-radius: 5px;
+  display: none;
+  font-size: 0.9rem;
+  height: 50px;
+  margin: 1rem auto;
+  padding: 0 10px;
+  position: relative;
+  transition: 1s;
+  text-align: center;
+  width: 80%;
+}
+.options-form #error-box::before {
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  border-bottom: 20px solid rgb(23, 24, 24);
+  content: "";
+  left: 50%;
+  position: absolute;
+  top: -20px;
+  transform: translateX(-50%);
+}
+.options-form .dice-type {
+  grid-column: 2/3;
+  grid-row: 2/4;
+}
+.options-form .dice-type__list {
+  background-color: rgb(23, 24, 24);
+  display: grid;
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0.5rem;
+}
+.options-form .dice-type__btn {
+  background-color: #EEEEEE;
+  border: 2px solid transparent;
+  cursor: pointer;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  width: 100%;
+}
+.options-form .dice-type__btn:focus {
+  border: 2px solid rgb(23, 24, 24);
+  text-decoration: underline;
+}
+.options-form .dice-type__img {
+  display: inline;
+  height: 35px;
+  width: 35px;
 }/*# sourceMappingURL=style.css.map */

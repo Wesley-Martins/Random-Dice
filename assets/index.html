@@ -8,7 +8,9 @@
     <link rel="shortcut icon" href="./img/dice-types/d20-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
+    
+    
     <link rel="stylesheet" href="./sass/reset.css">
     <link rel="stylesheet" href="./sass/style.css">
 </head>
@@ -28,35 +30,37 @@
             </div>
             <form class="options-form" action="" >
                 <input id="roll-btn" type="button" value="Rolar dados">
-                <label class="option-titles" id="number-input-label" for="number-of-dices">Número de dados:</label>
-                <div class="number-container">
-                    <input class="options-form__number" type="number" name="number-of-dices" min="1" max="10" value="1">
+                <section class="number-container">
+                    <h3 class="titles" id="number-input-label" for="number-of-dices">Número de dados:</h3>
+                    <div class="input-wrapper">
+                        <input class="options-form__number" type="number" name="number-of-dices" min="1" max="10" value="1">
+                    </div>
                     <div id="error-box"></div>
-                </div>
+                </section>
 
-                <h3 class="option-titles options-form__type-title">Tipo de dado</h3>
-                <div class="dice-type">
+                <section class="dice-type">
+                    <h3 class="dice-type__title titles">Tipo de dado</h3>
                     <ol class="dice-type__list">
                         <li class="dice-type__item">
-                            <input class="dice-type__btn" data-type-btn="4" type="button" value="4 lados">
+                            <input class="dice-type__btn" data-type-btn="4" type="button" value="d4">
                         </li>
                         <li class="dice-type__item">
-                            <input class="dice-type__btn" data-type-btn="6" type="button" value="6 lados">
+                            <input class="dice-type__btn" data-type-btn="6" type="button" value="d6">
                         </li>
                         <li class="dice-type__item">
-                            <input class="dice-type__btn" data-type-btn="8" type="button" value="8 lados">
+                            <input class="dice-type__btn" data-type-btn="8" type="button" value="d8">
                         </li>
                         <li class="dice-type__item">
-                            <input class="dice-type__btn" data-type-btn="10" type="button" value="10 lados">
+                            <input class="dice-type__btn" data-type-btn="10" type="button" value="d10">
                         </li>
                         <li class="dice-type__item">
-                            <input class="dice-type__btn" data-type-btn="12" type="button" value="12 lados">
+                            <input class="dice-type__btn" data-type-btn="12" type="button" value="d12">
                         </li>
                         <li class="dice-type__item">                            
-                            <input class="dice-type__btn" data-type-btn="20" type="button" value="20 lados">
+                            <input class="dice-type__btn" data-type-btn="20" type="button" value="d20">
                         </li>
                     </ol>
-                </div>
+                </section>
             </form>
         </section>
     </main>
