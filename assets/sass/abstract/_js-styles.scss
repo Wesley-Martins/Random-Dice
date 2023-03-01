@@ -22,12 +22,39 @@
 .slide-left {
     animation: slide 0.3s ease-in-out 0s 1 forwards;
     animation-direction: reverse;
-    background-image: url(../img/theme-icons/moon-icon.png)!important;
+    background-image: url(../img/icons/moon-icon.png)!important;
 }
 
 .slide-right {
     animation: slide 0.3s ease-in-out 0s 1 forwards;
-    background-image: url(../img/theme-icons/sun-icon.png)!important;
+    background-image: url(../img/icons/sun-icon.png)!important;
+}
+
+@keyframes openFromTop {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: auto
+    }
+}
+
+@keyframes openListItem {
+    0% {
+        transform: translateY(-100%)
+    }
+    100% {
+        transform: 0;
+    }
+}
+
+.dropList {
+    animation: openFromTop 0.2s ease 0s 1 forwards;
+    padding: 0.5rem;
+    & > * {
+        animation: openListItem 0.25s ease 0s 1 forwards;
+        display: block !important; 
+    }
 }
 
 // dark-theme === body

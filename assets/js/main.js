@@ -82,8 +82,8 @@ diceAmountInput.addEventListener("input", function() {
     
     const errorBox = document.getElementById("error-box");
     if(number < diceAmountInput.min || number > diceAmountInput.max) {
-        errorBox.innerHTML = `Por favor, insira um valor entre ${diceAmountInput.min} e ${diceAmountInput.max}.`
-        errorBox.style.display = "grid";
+        errorBox.innerHTML = `Insira um valor entre ${diceAmountInput.min} e ${diceAmountInput.max}.`
+        errorBox.style.display = "inline-block";
     }
 
     else {
@@ -108,3 +108,10 @@ themeSwipper.addEventListener("click", () => {
         themeIcon.classList.add("slide-right");
     }
 })
+
+const dropDown = document.querySelector(".dice-type__title");
+const typeList = document.querySelector(".dice-type__list");
+dropDown.addEventListener("click", () => {
+    typeList.classList.toggle("dropList");
+})
+
