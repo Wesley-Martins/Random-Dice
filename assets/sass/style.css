@@ -1,5 +1,6 @@
 * {
   font-family: "Titillium Web", sans-serif;
+  transition: background-color 0.3s;
 }
 
 @keyframes shake {
@@ -25,22 +26,8 @@
   animation-timing-function: ease-in-out;
 }
 
-@keyframes slide {
-  0% {
-    transform: 0;
-  }
-  100% {
-    transform: translate(100%, -50%);
-  }
-}
-.slide-left {
-  animation: slide 0.3s ease-in-out 0s 1 forwards;
-  animation-direction: reverse;
-  background-image: url(../img/icons/moon-icon.png) !important;
-}
-
 .slide-right {
-  animation: slide 0.3s ease-in-out 0s 1 forwards;
+  transform: translate(100%, -50%) !important;
   background-image: url(../img/icons/sun-icon.png) !important;
 }
 
@@ -61,11 +48,11 @@
   }
 }
 .dropList {
-  animation: openFromTop 0.2s ease 0s 1 forwards;
+  animation: openFromTop 0.15s ease 0s 1 forwards;
   padding: 0.5rem;
 }
 .dropList > * {
-  animation: openListItem 0.25s ease 0s 1 forwards;
+  animation: openListItem 0.2s ease 0s 1 forwards;
   display: block !important;
 }
 
@@ -79,20 +66,24 @@
   color: #EEEEEE;
 }
 .dark-theme .dice-section {
-  background: #414141;
+  background-color: #414141;
+}
+.dark-theme .dice-section .dices__container {
+  background-color: #525252;
+}
+.dark-theme .dice-section #roll-btn {
+  box-shadow: 2px 2px #b7b7b7;
 }
 
 body {
-  background-color: #E7F6F2;
-  transition: 0.3s;
+  background-color: #EEEEEE;
 }
 
 header {
   align-items: center;
-  background-color: #A5C9CA;
+  background-color: #b7b7b7;
   display: flex;
   justify-content: space-between;
-  opacity: 90%;
   padding: 0.5rem 1rem;
 }
 header .logo {
@@ -110,9 +101,9 @@ header .logo__txt {
 }
 header .theme-swipper {
   background-color: #EEEEEE;
+  border: none;
   border-radius: 10px;
   cursor: pointer;
-  display: inline-block;
   height: 20px;
   position: relative;
   width: 50px;
@@ -124,6 +115,7 @@ header .theme-swipper__icon {
   left: -2px;
   position: absolute;
   transform: translateY(-50%);
+  transition: transform 0.3s ease-in-out;
   top: 50%;
   width: 30px;
 }
@@ -131,30 +123,36 @@ header .theme-swipper__icon {
 main {
   display: flex;
   justify-content: center;
-  margin: 1rem 0;
+  margin: 1rem 5px;
   min-height: 90vh;
 }
 
 .dice-section {
-  background-color: #A5C9CA;
+  background-color: #b7b7b7;
   display: grid;
   flex-grow: 1;
   grid-template-rows: 0.5fr 1fr;
-  min-height: 600px;
+  min-height: 610px;
+  max-height: 780px;
   max-width: 600px;
   padding: 0.25rem;
 }
+@media (max-width: 505px) {
+  .dice-section {
+    min-height: 755px;
+  }
+}
 .dice-section .dices__container {
   align-items: center;
-  background-color: white;
-  border-bottom: 1px solid rgb(23, 24, 24);
+  background-color: #EEEEEE;
+  border-bottom: 1px solid #222831;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  height: 225px;
   justify-content: center;
+  max-height: 550px;
   margin-bottom: 0.75rem;
-  padding: 0.5rem;
+  padding: 0.25rem;
 }
 .dice-section .dices__container .dices {
   align-items: center;
@@ -167,63 +165,70 @@ main {
   width: 100px;
 }
 
-.options-form {
+.options-section {
   display: grid;
   -moz-column-gap: 1rem;
        column-gap: 1rem;
-  row-gap: 1.5rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto 1fr;
+  row-gap: 1.5rem;
 }
-.options-form #roll-btn {
-  background-color: #EEEEEE;
+@media (max-width: 505px) {
+  .options-section {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.options-section #roll-btn {
+  background-color: #222831;
   border: none;
-  box-shadow: 2px 2px rgb(23, 24, 24);
-  color: black;
+  box-shadow: 2px 2px #414141;
+  color: #EEEEEE;
   cursor: pointer;
   grid-column: 1/-1;
   grid-row: 1/2;
-  justify-self: center;
   letter-spacing: 1px;
+  margin: 0 auto;
   padding: 0.3rem 1rem;
   transition: all 0.1s;
+  width: 200px;
 }
-.options-form #roll-btn:active {
+.options-section #roll-btn:active {
   transform: translate(2px, 2px);
   box-shadow: none;
 }
-.options-form .titles {
-  background-color: rgb(23, 24, 24);
+.options-section .titles {
+  background-color: #222831;
   color: #EEEEEE;
   font-size: 1.15rem;
   padding: 0.4rem 0;
   text-align: center;
 }
-.options-form .number-container {
+.options-section .number-container {
   align-items: center;
-  background-color: rgb(23, 24, 24);
+  background-color: #222831;
   display: flex;
+  gap: 0.75rem;
   grid-row: 2/3;
-  justify-content: space-around;
+  justify-content: center;
 }
-.options-form .input-wrapper {
+.options-section .input-wrapper {
   position: relative;
 }
-.options-form .input-wrapper .options-form__number {
+.options-section .input-wrapper .options-section__number {
   border-radius: 3px;
   border: none;
   font-size: 1.1rem;
-  height: 30px;
-  position: relative;
+  height: 100%;
   text-align: center;
   width: 80px;
 }
-.options-form .input-wrapper .options-form__number:hover, .options-form .input-wrapper .options-form__number:focus {
+.options-section .input-wrapper .options-section__number:hover, .options-section .input-wrapper .options-section__number:focus {
   outline: none;
 }
-.options-form .input-wrapper #error-box {
+.options-section .input-wrapper #error-box {
   color: #EEEEEE;
-  background: rgb(23, 24, 24);
+  background: #222831;
   border-radius: 5px;
   display: none;
   font-size: 0.9rem;
@@ -232,57 +237,58 @@ main {
   padding: 0 10px;
   position: absolute;
   top: 115%;
-  transition: 1s;
   transform: translateX(-50%);
   text-align: center;
   width: 100px;
+  z-index: 1;
 }
-.options-form .input-wrapper #error-box::before {
+.options-section .input-wrapper #error-box::before {
   border-right: 10px solid transparent;
   border-left: 10px solid transparent;
-  border-bottom: 20px solid rgb(23, 24, 24);
+  border-bottom: 20px solid #222831;
   content: "";
   left: 50%;
   position: absolute;
   top: -20px;
   transform: translateX(-50%);
 }
-.options-form .dice-type {
+.options-section .dice-type {
   grid-column: 2/3;
   grid-row: 2/4;
 }
-.options-form .dice-type__title {
+.options-section .dice-type__title-btn {
+  border: none;
   cursor: pointer;
   position: relative;
+  width: 100%;
 }
-.options-form .dice-type__title::after {
+.options-section .dice-type__title-btn::after {
   background: url(../img/icons/dropdown-icon.png) no-repeat center/cover;
   content: "";
   display: block;
   height: 10px;
-  left: 69%;
+  right: 20%;
   position: absolute;
   top: 50%;
   width: 18px;
 }
-.options-form .dice-type__list {
-  background-color: rgb(23, 24, 24);
+.options-section .dice-type__list {
+  background-color: #222831;
   display: grid;
-  gap: 0.5rem;
   list-style: none;
+  row-gap: 0.5rem;
 }
-.options-form .dice-type__item {
+.options-section .dice-type__item {
   display: none;
 }
-.options-form .dice-type__btn {
+.options-section .dice-type__btn {
   background-color: #EEEEEE;
   border: 2px solid transparent;
   cursor: pointer;
   font-size: 1.05rem;
-  letter-spacing: 1px;
   width: 100%;
 }
-.options-form .dice-type__btn:focus {
-  border: 2px solid rgb(23, 24, 24);
+.options-section .dice-type__btn:focus {
+  border: 2px solid #222831;
   text-decoration: underline;
 }/*# sourceMappingURL=style.css.map */

@@ -3,30 +3,35 @@
 main {
     display: flex;
     justify-content: center;
-    margin: 1rem 0;
+    margin: 1rem 5px;
     min-height: 90vh;
 }
 
 .dice-section {
-    background-color: $color-primary-light;
+    background-color: $color-secondary-light;
     display: grid;
     flex-grow: 1;
     grid-template-rows: 0.5fr 1fr;
-    min-height: 600px;
+    min-height: 610px;
+    max-height: 780px;
     max-width: 600px;
     padding: 0.25rem;
+    @media (max-width: 505px) {
+        min-height: 755px;
+    }
 
     .dices__container {
         align-items: center;
-        background-color: white;
+        background-color: $color-primary-light;
         border-bottom: 1px solid $color-soft-black;
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
-        height: 225px;
         justify-content: center;
+        max-height: 550px;
         margin-bottom: 0.75rem;
-        padding: 0.5rem;
+        padding: 0.25rem;
+
         .dices {
             align-items: center;
             background: url(../img/dice-types/d20.png) no-repeat center / contain;
@@ -35,7 +40,7 @@ main {
             font-weight: bold;
             height: 100px;
             justify-content: center;
-            width: 100px
+            width: 100px;
         }
     }
 }

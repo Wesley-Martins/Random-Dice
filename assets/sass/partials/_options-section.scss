@@ -1,24 +1,29 @@
 @import "../abstract/variables";
 
-.options-form {
+.options-section {
     display: grid;
     column-gap: 1rem;
-    row-gap: 1.5rem;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto 1fr;
+    row-gap: 1.5rem;
+    @media (max-width: 505px) {
+        display: flex;
+        flex-direction: column;
+    }
 
     #roll-btn {
-        background-color: $color-soft-white;
+        background-color: $color-soft-black;
         border: none;
-        box-shadow: 2px 2px $color-soft-black;
-        color: black;
+        box-shadow: 2px 2px $color-secondary-dark;
+        color: $color-primary-light;
         cursor: pointer;
         grid-column: 1/-1;
         grid-row: 1/2;
-        justify-self: center;
         letter-spacing: 1px;
+        margin: 0 auto;
         padding: 0.3rem 1rem;
         transition: all 0.1s;
+        width: 200px;
         &:active {
             transform: translate(2px, 2px);
             box-shadow: none;
@@ -27,7 +32,7 @@
 
     .titles {
         background-color: $color-soft-black;
-        color: $color-soft-white;
+        color: $color-primary-light;
         font-size: 1.15rem;
         padding: 0.4rem 0;
         text-align: center;
@@ -37,18 +42,18 @@
         align-items: center;
         background-color: $color-soft-black;
         display: flex;
+        gap: 0.75rem;
         grid-row: 2/3;
-        justify-content: space-around;
+        justify-content: center;
     }
     .input-wrapper {
         position: relative;
 
-        .options-form__number {
+        .options-section__number {
             border-radius: 3px;
             border: none;
             font-size: 1.1rem;
-            height: 30px;
-            position: relative;
+            height: 100%;
             text-align: center;
             width: 80px;
             &:hover,
@@ -57,7 +62,7 @@
             }
         }
         #error-box {
-            color: $color-soft-white;
+            color: $color-primary-light;
             background: $color-soft-black;
             border-radius: 5px;
             display: none;
@@ -67,10 +72,10 @@
             padding: 0 10px;
             position: absolute;
             top: 115%;
-            transition: 1s;
             transform: translateX(-50%);
             text-align: center;
             width: 100px;
+            z-index: 1;
             &::before {
                 border-right: 10px solid transparent;
                 border-left: 10px solid transparent;
@@ -88,16 +93,18 @@
         grid-column: 2/3;
         grid-row: 2/4;
 
-        &__title {
+        &__title-btn {
+            border: none;
             cursor: pointer;
             position: relative;
+            width: 100%;
         }
-        &__title::after {
+        &__title-btn::after {
             background: url(../img/icons/dropdown-icon.png) no-repeat center / cover;
             content: "";
             display: block;
             height: 10px;
-            left: 69%;
+            right: 20%;
             position: absolute;
             top: 50%;
             width: 18px;
@@ -105,18 +112,17 @@
         &__list {
             background-color: $color-soft-black;
             display: grid;
-            gap: 0.5rem;
             list-style: none;
+            row-gap: 0.5rem;
         }
         &__item {
             display: none;
         }
         &__btn {
-            background-color: $color-soft-white;
+            background-color: $color-primary-light;
             border: 2px solid transparent;
             cursor: pointer;
             font-size: 1.05rem;
-            letter-spacing: 1px;
             width: 100%;
         }
         &__btn:focus {

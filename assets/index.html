@@ -5,12 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Dice</title>
-    <link rel="shortcut icon" href="./img/dice-types/d20-logo.png">
+    <link rel="shortcut icon" href="./img/icons/random-dice-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
-    
-    
     <link rel="stylesheet" href="./sass/reset.css">
     <link rel="stylesheet" href="./sass/style.css">
 </head>
@@ -20,26 +18,28 @@
             <img class="logo__img" src="./img/icons/random-dice-logo.png" alt="logo do Random Dice">
             <span class="logo__txt">Random Dice</span>
         </div>
-        <div class="theme-swipper">
+        <button class="theme-swipper">
             <span class="theme-swipper__icon"></span>
-        </div>
+        </button>
     </header>
     <main>
         <section class="dice-section">
             <div class="dices__container">
             </div>
-            <form class="options-form" action="" >
-                <input id="roll-btn" type="button" value="Rolar dados">
-                <section class="number-container">
+            <section class="options-section">
+                <button id="roll-btn">Rolar dados</button>
+                <div class="number-container">
                     <h3 class="titles" id="number-input-label" for="number-of-dices">Número de dados:</h3>
                     <div class="input-wrapper">
-                        <input class="options-form__number" type="number" name="number-of-dices" min="1" max="10" value="1">
+                        <input class="options-section__number" type="number" name="number-of-dices" min="1" max="10" value="1">
                         <div id="error-box"></div>
                     </div>
-                </section>
+                </div>
 
-                <section class="dice-type">
-                    <h3 class="dice-type__title titles">Tipo de dado</h3>
+                <div class="dice-type">
+                    <button class="dice-type__title-btn" type="button">
+                        <h3 class="titles">Tipo de dado</h3>
+                    </button>
                     <ol class="dice-type__list">
                         <li class="dice-type__item">
                             <input class="dice-type__btn" data-type-btn="4" type="button" value="d4">
@@ -60,10 +60,11 @@
                             <input class="dice-type__btn" data-type-btn="20" type="button" value="d20">
                         </li>
                     </ol>
-                </section>
-            </form>
+                </div>
+            </section>
         </section>
     </main>
-    <script src="./js/main.js"></script>
+    <script src="./js/CSSClassAdder.js" type="module"></script>
+    <script src="./js/main.js" type="module"></script>
 </body>
 </html>

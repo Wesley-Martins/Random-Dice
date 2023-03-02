@@ -2,10 +2,9 @@
 
 header {
     align-items: center;
-    background-color: $color-primary-light;
+    background-color: $color-secondary-light;
     display: flex;
     justify-content: space-between;
-    opacity: 90%;
     padding: 0.5rem 1rem;
     .logo {
         position: relative;
@@ -14,7 +13,6 @@ header {
             height: 70px;
             width: 70px;
         }
-
         &__txt {
             font-size: 1.1rem;
             position: absolute;
@@ -24,10 +22,10 @@ header {
     }
 
     .theme-swipper {
-        background-color: $color-soft-white;
+        background-color: $color-primary-light;
+        border: none;
         border-radius: 10px;
         cursor: pointer;
-        display: inline-block;
         height: 20px;
         position: relative;
         width: 50px;
@@ -38,6 +36,7 @@ header {
             left: -2px;
             position: absolute;
             transform: translateY(-50%);
+            transition: transform 0.3s ease-in-out;
             top: 50%;
             width: 30px;
         }
