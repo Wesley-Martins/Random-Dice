@@ -69,12 +69,22 @@ rollBtn.addEventListener("click", () => {
     })
 })
 
+//Valida o input value de acordo com o valor do atributo pattern usando expressão regular
+diceAmountInput.addEventListener("beforeinput", (event) => {
+    const pattern = new RegExp(event.target.pattern);
+    const inputValue = event.target.value + event.data;
+    
+    if(!pattern.test(inputValue)) {
+        event.preventDefault();
+    }
+})
+
 diceAmountInput.addEventListener("input", function() {
     const number = parseInt(diceAmountInput.value);
     const errorBox = document.getElementById("error-box");
     
     if(number < diceAmountInput.min || number > diceAmountInput.max) {
-        errorBox.innerHTML = `Insira um valor entre ${diceAmountInput.min} e ${diceAmountInput.max}.`
+        errorBox.innerHTML = `Insira um valor entre ${diceAmountInput.min} e ${diceAmountInput.max}.`;
         errorBox.style.display = "inline-block";
     }
     else {
